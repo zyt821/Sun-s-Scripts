@@ -6,7 +6,7 @@ name: 中青自动阅读
 on:
   workflow_dispatch:
   schedule:
-     - cron: '6 1-12/2 * * *'
+     - cron: '46 0-23 * * *'
   watch:
     types: started
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-          
+
       - name: '运行 【中青看点自动阅读九】'
         if: env.YOUTH_READ4
         run: |
