@@ -1,4 +1,4 @@
-name: 百度极速版
+name: 百度极速版LZF
 on:
   workflow_dispatch:
   schedule:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIEZL }}
+        BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIELZF }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
