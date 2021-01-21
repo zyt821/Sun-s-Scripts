@@ -3,7 +3,7 @@ name: 百度极速版zyt
 on:
   workflow_dispatch:
   schedule:
-     - cron: '30 6-19 * * *'
+     - cron: '0 10-22/3 * * *'
   watch:
     types: started
 jobs:
