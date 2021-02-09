@@ -132,7 +132,7 @@ if (rotaryres.status !== 0&&rotaryres.data.doubleNum !== 0){
 $.log(`转盘双倍: +${doublerotary}青豆 剩余${rotaryres.data.doubleNum}次`)
 }
   await earningsInfo();
-  await showmsg();
+  //await showmsg();
   if ($.isNode()&&rotaryres.status !== 0)
     if( rotarytimes && (100-rotarytimes)%95 == 0 && cash >= 10){
        await notify.sendNotify($.name + " " + nick, "您的余额约为"+cash+"元，已可以提现"+'\n'+`【收益总计】${signinfo.data.user.score}青豆  现金约${cash}元\n${detail}`)
