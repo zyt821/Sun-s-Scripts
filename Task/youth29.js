@@ -239,9 +239,7 @@ function userInfo() {
                 subTitle = `【收益总计】${signinfo.data.user.score}青豆  现金约${cash}元`;
                 nick = `账号: ${signinfo.data.user.nickname}`;
                 $.setdata(nick,"zq_nick")
-                if(parseInt(cash) >= withdrawcash && !withdrawBody == false){
-                await withDraw()
-               };
+                
                 if(signinfo.data.is_sign == false){
                 await getsign();
               } else if(signinfo.data.is_sign == true){
@@ -258,7 +256,7 @@ function userInfo() {
         })
     })
 }
-
+/*
 function withDraw() {
     return new Promise((resolve, reject) => {
         const url = {
@@ -280,7 +278,7 @@ function withDraw() {
             resolve()
         })
     })
-}
+}*/
 
 function SevCont() {
     return new Promise((resolve, reject) =>{
