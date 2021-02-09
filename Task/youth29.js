@@ -605,7 +605,7 @@ function earningsInfo() {
       resolve()
     })
   })
-}
+}/*
 async function showmsg() {
        if (rotaryres.status == 1 && rotarytimes >= 97) {
           $.msg($.name + " " + nick, subTitle, detail)  //默认前三次为通知
@@ -618,7 +618,7 @@ async function showmsg() {
      else {
        console.log(`【收益总计】${signinfo.data.user.score}青豆  现金约${cash}元\n`+ detail)
    }
-}
+}*/
 
 function GetCookie(){if($request&&$request.method!=`OPTIONS`&&$request.url.match(/\/NewTaskIos\/getTaskList/)){RefererVal=$request.headers.Referer;signheaderVal=RefererVal.match(/&uid=\d+/)+RefererVal.match(/&cookie=[_a-zA-Z0-9-]+/)+RefererVal.match(/&cookie_id=[a-zA-Z0-9]+/);if(signheaderVal)$.setdata(signheaderVal,'youthheader_zq');$.log(`${$.name}获取Cookie: 成功, signheaderVal: $}`);$.msg($.name,`获取Cookie: 成功🎉`,``)}else if($request&&$request.method!=`OPTIONS`&&$request.url.match(/\/article\/complete/)){const articlebodyVal=$request.body;if(articlebodyVal)$.setdata(articlebodyVal,'read_zq');$.log(`${$.name}获取阅读: 成功, articlebodyVal: ${articlebodyVal}`);$.msg($.name,`获取阅读请求: 成功🎉`,``)}else if($request&&$request.method!=`OPTIONS`&&$request.url.match(/\/v5\/user\/app_stay/)){const timebodyVal=$request.body;if(timebodyVal)$.setdata(timebodyVal,'readtime_zq');$.log(`${$.name}获取阅读时长: 成功, timebodyVal: ${timebodyVal}`);$.msg($.name,`获取阅读时长: 成功🎉`,``)}else if($request&&$request.method!=`OPTIONS`&&$request.url.match(/\/article\/red_packet/)){const redpbodyVal=$request.body;if(redpbodyVal)$.setdata(redpbodyVal,'red_zq');$.log(`${$.name}获取惊喜红包: 成功, redpbodyVal: ${redpbodyVal}`);$.msg($.name,`获取惊喜红包请求: 成功🎉`,``)}else if($request&&$request.method!=`OPTIONS`&&$request.url.match(/\/withdraw\d?\.json/)){const withdrawVal=$request.body;const withdrawUrl=$request.url;if(withdrawVal)$.setdata(withdrawVal,'cashbody_zq');if(withdrawUrl)$.setdata(withdrawUrl,'cashurl_zq');$.log(`${$.name}, 获取提现请求: 成功, withdrawUrl: ${withdrawUrl}`);$.log(`${$.name}, 获取提现请求: 成功, withdrawBody: ${withdrawVal}`);$.msg($.name,`获取提现请求: 成功🎉`,``)}}
 function formatJson(json,options){var reg=null,formatted='',pad=0,PADDING='    ';options=options||{};options.newlineAfterColonIfBeforeBraceOrBracket=(options.newlineAfterColonIfBeforeBraceOrBracket===true)?true:false;options.spaceAfterColon=(options.spaceAfterColon===false)?false:true;if(typeof json!=='string'){json=JSON.stringify(json);}else{json=JSON.parse(json);json=JSON.stringify(json)};json=json.replace(/([\{\}])/g,'\r\n$1\r\n');json=json.replace(/([\[\]])/,'\r\n$1\r\n');json=json.replace(/(\,)/g,'$1\r\n');json=json.replace(/(\r\n\r\n)/g,'\r\n');json=json.replace(/\r\n\,/g,',');if(!options.newlineAfterColonIfBeforeBraceOrBracket){json=json.replace(/\:\r\n\{/g,':{');json=json.replace(/\:\r\n\[/g,':[')};if(options.spaceAfterColon){json=json.replace(/\:/g,':')};(json.split('\r\n')).forEach(function(node,index){var i=0,indent=0,padding='';if(node.match(/\{$/)||node.match(/\[$/)){indent=1}else if(node.match(/\}/)||node.match(/\]/)){if(pad!==0){pad-=1}}else{indent=0};for(i=0;i<pad;i++){padding+=PADDING};formatted+=padding+node+'\r\n';pad+=indent});return formatted}
